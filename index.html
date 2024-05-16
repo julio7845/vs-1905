@@ -87,12 +87,80 @@ fbq('track', 'PageView');
 <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=996077841856466&ev=PageView&noscript=1"
 /></noscript>
-<!-- End Meta Pixel Code -->
-<script src="https://cdn.utmify.com.br/scripts/utms/latest.js" async defer></script>
-				</div>
+<!-- End Meta Pixel Code -->		</div>
 				</div>
 		<div class="elementor-element elementor-element-475004e e-flex e-con-boxed e-con e-child" data-id="475004e" data-element_type="container" data-settings="{" content_width":"boxed"}"="">
 					<div class="e-con-inner">
+				<div class="elementor-element elementor-element-452fda6 elementor-widget elementor-widget-html" data-id="452fda6" data-element_type="widget" data-widget_type="html.default">
+				<div class="elementor-widget-container">
+			<script src="js/notiflix-aio-2.6.0.min.js"></script>
+
+<script>
+    var position = "left-bottom";
+    var color = "verde";
+    var animation = "from-left";
+    var product_name = "";
+    var phrase = "acabou de adquirir";
+    var timeout = 4000;
+    var type_name = "masc, fem";
+    var msg_final = "";
+    var min_time = 4;
+    var max_time = 20;
+    var titles = ['15 títulos', '20 títulos', '30 títulos', '50 títulos', '100 títulos', '200 títulos'];
+
+    var names_masc = ['Jose', 'Joao', 'Antonio', 'Francisco', 'Carlos', 'Paulo', 'Pedro', 'Lucas', 'Luiz', 'Marcos', 'Luis', 'Gabriel', 'Rafael', 'Daniel', 'Marcelo', 'Bruno', 'Eduardo', 'Felipe', 'Rodrigo', 'Manoel', 'Mateus', 'Andre', 'Fernando', 'Fabio', 'Leonardo', 'Gustavo', 'Guilherme', 'Leandro', 'Tiago', 'Anderson', 'Ricardo', 'Marcio', 'Jorge', 'Alexandre', 'Roberto', 'Edson', 'Diego', 'Vitor', 'Sergio', 'Claudio', 'Matheus', 'Thiago', 'Geraldo', 'Adriano', 'Luciano', 'Julio', 'Renato', 'Alex', 'Vinicius', 'Rogerio', 'Samuel', 'Ronaldo', 'Mario', 'Flavio', 'Douglas', 'Igor', 'Davi', 'Manuel', 'Jeferson', 'Cicero', 'Victor', 'Miguel', 'Robson', 'Mauricio', 'Danilo', 'Henrique', 'Caio', 'Reginaldo', 'Joaquim', 'Benedito', 'Gilberto', 'Marco', 'Alan', 'Nelson', 'Cristiano', 'Elias', 'Wilson', 'Valdir', 'Emerson', 'Luan', 'David', 'Renan', 'Severino', 'Fabricio', 'Mauro', 'Jonas', 'Gilmar', 'Jean', 'Fabiano', 'Wesley', 'Diogo', 'Adilson', 'Jair', 'Alessandro', 'Everton', 'Osvaldo', 'Gilson', 'Willian', 'Joel', 'Silvio', 'Helio', 'Maicon', 'Reinaldo', 'Pablo', 'Artur', 'Vagner', 'Valter', 'Celso', 'Ivan', 'Cleiton', 'Vanderlei', 'Vicente', 'Arthur', 'Milton', 'Domingos', 'Wagner', 'Sandro', 'Moises', 'Edilson', 'Ademir', 'Adao', 'Evandro', 'Cesar', 'Valmir', 'Murilo', 'Juliano', 'Edvaldo', 'Ailton', 'Junior', 'Breno', 'Nicolas', 'Ruan', 'Alberto', 'Rubens', 'Nilton', 'Augusto', 'Cleber', 'Osmar', 'Nilson', 'Hugo', 'Otavio', 'Vinicios', 'Italo', 'Wilian', 'Alisson', 'Aparecido'];
+    var names_fem = ['Maria', 'Ana', 'Francisca', 'Antonia', 'Adriana', 'Juliana', 'Marcia', 'Fernanda', 'Patricia', 'Aline', 'Sandra', 'Camila', 'Amanda', 'Bruna', 'Jessica', 'Leticia', 'Julia', 'Luciana', 'Vanessa', 'Mariana', 'Gabriela', 'Vera', 'Vitoria', 'Larissa', 'Claudia', 'Beatriz', 'Rita', 'Luana', 'Sonia', 'Renata', 'Eliane'];
+
+    var option = {
+        position: position,
+        cssAnimationStyle: animation,
+        plainText: false,
+        timeout: timeout
+    };
+
+    function show_notification() {
+        if (type_name == "masc") {
+            msg_final = "<strong>" + names_masc[Math.floor(Math.random() * names_masc.length)] + "</strong>";
+        } else if (type_name == "fem") {
+            msg_final = "<strong>" + names_fem[Math.floor(Math.random() * names_fem.length)] + "</strong>";
+        } else {
+            var array_aux = ["masc", "fem"];
+
+            if (array_aux[Math.floor(Math.random() * array_aux.length)] == "masc") {
+                msg_final = "<strong>" + names_masc[Math.floor(Math.random() * names_masc.length)] + "</strong>";
+            } else {
+                msg_final = "<strong>" + names_fem[Math.floor(Math.random() * names_fem.length)] + "</strong>";
+            }
+        }
+
+        var randomTitleIndex = Math.floor(Math.random() * titles.length);
+        var randomTitle = titles[randomTitleIndex];
+
+        msg_final += " " + phrase + " " + randomTitle;
+
+        if (color == "verde") {
+            Notiflix.Notify.Success(msg_final, option);
+        }
+
+        if (color == "azul") {
+            Notiflix.Notify.Info(msg_final, option);
+        }
+
+        if (color == "vermelho") {
+            Notiflix.Notify.Failure(msg_final, option);
+        }
+
+        if (color == "amarelo") {
+            Notiflix.Notify.Warning(msg_final, option);
+        }
+
+        var rand = Math.floor(Math.random() * (max_time - min_time + 1) + min_time);
+        setTimeout(show_notification, rand * 1000);
+    }
+    setTimeout(show_notification, 4 * 1000);
+</script>
+		</div>
+				</div>
 				<div class="elementor-element elementor-element-514cb6d1 elementor-widget elementor-widget-image" data-id="514cb6d1" data-element_type="widget" data-widget_type="image.default">
 				<div class="elementor-widget-container">
 													<img decoding="async" width="800" height="450" src="images/333136363630343236.webp" class="attachment-large size-large wp-image-829" alt="" srcset="images/333136363630343236.webp 1000w, images/333136363630343236-300x169.webp 300w, images/333136363630343236-768x432.webp 768w" sizes="(max-width: 800px) 100vw, 800px">													</div>
@@ -135,22 +203,26 @@ src="https://www.facebook.com/tr?id=996077841856466&ev=PageView&noscript=1"
 </script>
 
 
-    <p id="texto">Viva Sorte - 14/05/2024</p>
+    <p id="texto">Viva Sorte - 16/05/2024</p>
 
 
 </h2>		</div>
 				</div>
 				<div class="elementor-element elementor-element-3269c1d5 elementor-widget elementor-widget-heading" data-id="3269c1d5" data-element_type="widget" data-widget_type="heading.default">
 				<div class="elementor-widget-container">
-			<h2 class="elementor-heading-title elementor-size-default">CONCORRA A UMA BMW + 9 CARROS 0KM POR APENAS <b>99 CENTAVOS!</b></h2>		</div>
+			<h2 class="elementor-heading-title elementor-size-default">CONCORRA A UMA BMW + 9 CARROS 0KM POR APENAS 99 CENTAVOS!</h2>		</div>
 				</div>
 				<div class="elementor-element elementor-element-4a3879cd elementor-widget elementor-widget-heading" data-id="4a3879cd" data-element_type="widget" data-widget_type="heading.default">
 				<div class="elementor-widget-container">
 			<h2 class="elementor-heading-title elementor-size-default">DOM, 19 MAI · 2024</h2>		</div>
 				</div>
+				<div class="elementor-element elementor-element-7f90975 elementor-widget elementor-widget-heading" data-id="7f90975" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Comprar mais títulos aumenta suas chances de ganhar!</h2>		</div>
+				</div>
 		<div class="elementor-element elementor-element-743011c e-flex e-con-boxed e-con e-child" data-id="743011c" data-element_type="container" data-settings="{" content_width":"boxed"}"="">
 					<div class="e-con-inner">
-		<a class="elementor-element elementor-element-107b4c5d e-transform e-flex e-con-boxed e-con e-child" data-id="107b4c5d" data-element_type="container" data-settings="{" _transform_scale_effect_hover_mobile":{"unit":"px","size":1.1,"sizes":[]},"background_background":"classic","content_width":"boxed","_transform_scale_effect_hover":{"unit":"px","size":"","sizes":[]},"_transform_scale_effect_hover_tablet":{"unit":"px","size":"","sizes":[]}}"="" href="https://pay.ativevivasorteoficial.shop/NDr8gmldAXRGBmj?utm_campaign=utm_campaign&amp;utm_source=utm_source&amp;utm_content=utm_content&amp;utm_medium=utm_medium">
+		<a class="elementor-element elementor-element-107b4c5d e-transform e-flex e-con-boxed e-con e-child" data-id="107b4c5d" data-element_type="container" data-settings="{" _transform_scale_effect_hover_mobile":{"unit":"px","size":1.1,"sizes":[]},"background_background":"classic","content_width":"boxed","_transform_scale_effect_hover":{"unit":"px","size":"","sizes":[]},"_transform_scale_effect_hover_tablet":{"unit":"px","size":"","sizes":[]}}"="" href="https://pay.vivasortesorteoficialpay.online/kYL6gee4WaYgrKM?utm_campaign=utm_campaign&amp;utm_source=utm_source&amp;utm_content=utm_content&amp;utm_medium=utm_medium">
 					<div class="e-con-inner">
 		<div class="elementor-element elementor-element-361ad89f e-flex e-con-boxed e-con e-child" data-id="361ad89f" data-element_type="container" data-settings="{" content_width":"boxed"}"="">
 					<div class="e-con-inner">
@@ -181,7 +253,7 @@ SELECIONAR</h2>		</div>
 				</div>
 					</div>
 				</a>
-		<a class="elementor-element elementor-element-4a3ea31b e-transform e-flex e-con-boxed e-con e-child" data-id="4a3ea31b" data-element_type="container" data-settings="{" _transform_scale_effect_hover_mobile":{"unit":"px","size":1.1,"sizes":[]},"background_background":"classic","content_width":"boxed","_transform_scale_effect_hover":{"unit":"px","size":"","sizes":[]},"_transform_scale_effect_hover_tablet":{"unit":"px","size":"","sizes":[]}}"="" href="https://pay.ativevivasorteoficial.shop/521rZJXJP6BgeaX?utm_campaign=utm_campaign&amp;utm_source=utm_source&amp;utm_content=utm_content&amp;utm_medium=utm_medium">
+		<a class="elementor-element elementor-element-4a3ea31b e-transform e-flex e-con-boxed e-con e-child" data-id="4a3ea31b" data-element_type="container" data-settings="{" _transform_scale_effect_hover_mobile":{"unit":"px","size":1.1,"sizes":[]},"background_background":"classic","content_width":"boxed","_transform_scale_effect_hover":{"unit":"px","size":"","sizes":[]},"_transform_scale_effect_hover_tablet":{"unit":"px","size":"","sizes":[]}}"="" href="https://pay.vivasortesorteoficialpay.online/DPXw3XrEeYBGzmp?utm_campaign=utm_campaign&amp;utm_source=utm_source&amp;utm_content=utm_content&amp;utm_medium=utm_medium">
 					<div class="e-con-inner">
 		<div class="elementor-element elementor-element-4ee7b072 e-flex e-con-boxed e-con e-child" data-id="4ee7b072" data-element_type="container" data-settings="{" content_width":"boxed"}"="">
 					<div class="e-con-inner">
@@ -211,7 +283,7 @@ SELECIONAR</h2>		</div>
 				</div>
 					</div>
 				</a>
-		<a class="elementor-element elementor-element-568dc6fe e-transform e-flex e-con-boxed e-con e-child" data-id="568dc6fe" data-element_type="container" data-settings="{" _transform_scale_effect_hover_mobile":{"unit":"px","size":1.1,"sizes":[]},"background_background":"classic","content_width":"boxed","_transform_scale_effect_hover":{"unit":"px","size":"","sizes":[]},"_transform_scale_effect_hover_tablet":{"unit":"px","size":"","sizes":[]}}"="" href="https://pay.ativevivasorteoficial.shop/ODAK3Ld8P023E6V?utm_campaign=utm_campaign&amp;utm_source=utm_source&amp;utm_content=utm_content&amp;utm_medium=utm_medium">
+		<a class="elementor-element elementor-element-568dc6fe e-transform e-flex e-con-boxed e-con e-child" data-id="568dc6fe" data-element_type="container" data-settings="{" _transform_scale_effect_hover_mobile":{"unit":"px","size":1.1,"sizes":[]},"background_background":"classic","content_width":"boxed","_transform_scale_effect_hover":{"unit":"px","size":"","sizes":[]},"_transform_scale_effect_hover_tablet":{"unit":"px","size":"","sizes":[]}}"="" href="https://pay.vivasortesorteoficialpay.online/mwK43681d4MGQ8b?utm_campaign=utm_campaign&amp;utm_source=utm_source&amp;utm_content=utm_content&amp;utm_medium=utm_medium">
 					<div class="e-con-inner">
 				<div class="elementor-element elementor-element-33146998 botaum elementor-widget-mobile__width-auto elementor-view-default elementor-widget elementor-widget-icon" data-id="33146998" data-element_type="widget" id="botaum" data-widget_type="icon.default">
 				<div class="elementor-widget-container">
@@ -253,7 +325,7 @@ SELECIONAR</h2>		</div>
 				</div>
 		<div class="elementor-element elementor-element-3b4e759 e-flex e-con-boxed e-con e-child" data-id="3b4e759" data-element_type="container" data-settings="{" background_background":"classic","content_width":"boxed"}"="">
 					<div class="e-con-inner">
-		<a class="elementor-element elementor-element-66022edf e-transform e-flex e-con-boxed e-con e-child" data-id="66022edf" data-element_type="container" data-settings="{" _transform_scale_effect_hover_mobile":{"unit":"px","size":1.1,"sizes":[]},"background_background":"classic","content_width":"boxed","_transform_scale_effect_hover":{"unit":"px","size":"","sizes":[]},"_transform_scale_effect_hover_tablet":{"unit":"px","size":"","sizes":[]}}"="" href="https://pay.ativevivasorteoficial.shop/nQ7kZ72d1MN30eJ?utm_campaign=utm_campaign&amp;utm_source=utm_source&amp;utm_content=utm_content&amp;utm_medium=utm_medium">
+		<a class="elementor-element elementor-element-66022edf e-transform e-flex e-con-boxed e-con e-child" data-id="66022edf" data-element_type="container" data-settings="{" _transform_scale_effect_hover_mobile":{"unit":"px","size":1.1,"sizes":[]},"background_background":"classic","content_width":"boxed","_transform_scale_effect_hover":{"unit":"px","size":"","sizes":[]},"_transform_scale_effect_hover_tablet":{"unit":"px","size":"","sizes":[]}}"="" href="https://pay.vivasortesorteoficialpay.online/BNjzgPy1l4W3M78?utm_campaign=utm_campaign&amp;utm_source=utm_source&amp;utm_content=utm_content&amp;utm_medium=utm_medium">
 					<div class="e-con-inner">
 		<div class="elementor-element elementor-element-1aab7215 e-flex e-con-boxed e-con e-child" data-id="1aab7215" data-element_type="container" data-settings="{" content_width":"boxed"}"="">
 					<div class="e-con-inner">
@@ -284,7 +356,7 @@ SELECIONAR</h2>		</div>
 				</div>
 					</div>
 				</a>
-		<a class="elementor-element elementor-element-6b5fbfdf e-transform e-flex e-con-boxed e-con e-child" data-id="6b5fbfdf" data-element_type="container" data-settings="{" _transform_scale_effect_hover_mobile":{"unit":"px","size":1.1,"sizes":[]},"background_background":"classic","content_width":"boxed","_transform_scale_effect_hover":{"unit":"px","size":"","sizes":[]},"_transform_scale_effect_hover_tablet":{"unit":"px","size":"","sizes":[]}}"="" href="https://pay.ativevivasorteoficial.shop/nQ7kZ72d1Ml30eJ?utm_campaign=utm_campaign&amp;utm_source=utm_source&amp;utm_content=utm_content&amp;utm_medium=utm_medium">
+		<a class="elementor-element elementor-element-6b5fbfdf e-transform e-flex e-con-boxed e-con e-child" data-id="6b5fbfdf" data-element_type="container" data-settings="{" _transform_scale_effect_hover_mobile":{"unit":"px","size":1.1,"sizes":[]},"background_background":"classic","content_width":"boxed","_transform_scale_effect_hover":{"unit":"px","size":"","sizes":[]},"_transform_scale_effect_hover_tablet":{"unit":"px","size":"","sizes":[]}}"="" href="https://pay.vivasortesorteoficialpay.online/DYp0ZxlMVLbZmvX?utm_campaign=utm_campaign&amp;utm_source=utm_source&amp;utm_content=utm_content&amp;utm_medium=utm_medium">
 					<div class="e-con-inner">
 		<div class="elementor-element elementor-element-74dae8d3 e-flex e-con-boxed e-con e-child" data-id="74dae8d3" data-element_type="container" data-settings="{" content_width":"boxed"}"="">
 					<div class="e-con-inner">
@@ -315,7 +387,7 @@ SELECIONAR</h2>		</div>
 				</div>
 					</div>
 				</a>
-		<a class="elementor-element elementor-element-11008e8d e-transform e-flex e-con-boxed e-con e-child" data-id="11008e8d" data-element_type="container" data-settings="{" _transform_scale_effect_hover_mobile":{"unit":"px","size":1.1,"sizes":[]},"background_background":"classic","content_width":"boxed","_transform_scale_effect_hover":{"unit":"px","size":"","sizes":[]},"_transform_scale_effect_hover_tablet":{"unit":"px","size":"","sizes":[]}}"="" href="https://pay.ativevivasorteoficial.shop/v7R0glYqrpV3Vr9?utm_campaign=utm_campaign&amp;utm_source=utm_source&amp;utm_content=utm_content&amp;utm_medium=utm_medium">
+		<a class="elementor-element elementor-element-11008e8d e-transform e-flex e-con-boxed e-con e-child" data-id="11008e8d" data-element_type="container" data-settings="{" _transform_scale_effect_hover_mobile":{"unit":"px","size":1.1,"sizes":[]},"background_background":"classic","content_width":"boxed","_transform_scale_effect_hover":{"unit":"px","size":"","sizes":[]},"_transform_scale_effect_hover_tablet":{"unit":"px","size":"","sizes":[]}}"="" href="https://pay.vivasortesorteoficialpay.online/nWrxGWE7ADw3654?utm_campaign=utm_campaign&amp;utm_source=utm_source&amp;utm_content=utm_content&amp;utm_medium=utm_medium">
 					<div class="e-con-inner">
 		<div class="elementor-element elementor-element-77e7cf83 e-flex e-con-boxed e-con e-child" data-id="77e7cf83" data-element_type="container" data-settings="{" content_width":"boxed"}"="">
 					<div class="e-con-inner">
@@ -449,16 +521,16 @@ SELECIONAR</h2>		</div>
 wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
 </script>
 <script id="elementor-pro-frontend-js-before">
-var ElementorProFrontendConfig = {"ajaxurl":"https:\/\/leanleapwheightloss.online\/wp-admin\/admin-ajax.php","nonce":"6026957be2","urls":{"assets":"https:\/\/leanleapwheightloss.online\/wp-content\/plugins\/elementor-pro\/assets\/","rest":"https:\/\/leanleapwheightloss.online\/wp-json\/"},"shareButtonsNetworks":{"facebook":{"title":"Facebook","has_counter":true},"twitter":{"title":"Twitter"},"linkedin":{"title":"LinkedIn","has_counter":true},"pinterest":{"title":"Pinterest","has_counter":true},"reddit":{"title":"Reddit","has_counter":true},"vk":{"title":"VK","has_counter":true},"odnoklassniki":{"title":"OK","has_counter":true},"tumblr":{"title":"Tumblr"},"digg":{"title":"Digg"},"skype":{"title":"Skype"},"stumbleupon":{"title":"StumbleUpon","has_counter":true},"mix":{"title":"Mix"},"telegram":{"title":"Telegram"},"pocket":{"title":"Pocket","has_counter":true},"xing":{"title":"XING","has_counter":true},"whatsapp":{"title":"WhatsApp"},"email":{"title":"Email"},"print":{"title":"Print"}},"facebook_sdk":{"lang":"en_US","app_id":""},"lottie":{"defaultAnimationUrl":"https:\/\/leanleapwheightloss.online\/wp-content\/plugins\/elementor-pro\/modules\/lottie\/assets\/animations\/default.json"}};
+var ElementorProFrontendConfig = {"ajaxurl":"https:\/\/leanleapwheightloss.online\/wp-admin\/admin-ajax.php","nonce":"fbe26f6150","urls":{"assets":"https:\/\/leanleapwheightloss.online\/wp-content\/plugins\/elementor-pro\/assets\/","rest":"https:\/\/leanleapwheightloss.online\/wp-json\/"},"shareButtonsNetworks":{"facebook":{"title":"Facebook","has_counter":true},"twitter":{"title":"Twitter"},"linkedin":{"title":"LinkedIn","has_counter":true},"pinterest":{"title":"Pinterest","has_counter":true},"reddit":{"title":"Reddit","has_counter":true},"vk":{"title":"VK","has_counter":true},"odnoklassniki":{"title":"OK","has_counter":true},"tumblr":{"title":"Tumblr"},"digg":{"title":"Digg"},"skype":{"title":"Skype"},"stumbleupon":{"title":"StumbleUpon","has_counter":true},"mix":{"title":"Mix"},"telegram":{"title":"Telegram"},"pocket":{"title":"Pocket","has_counter":true},"xing":{"title":"XING","has_counter":true},"whatsapp":{"title":"WhatsApp"},"email":{"title":"Email"},"print":{"title":"Print"}},"facebook_sdk":{"lang":"en_US","app_id":""},"lottie":{"defaultAnimationUrl":"https:\/\/leanleapwheightloss.online\/wp-content\/plugins\/elementor-pro\/modules\/lottie\/assets\/animations\/default.json"}};
 </script>
-<script src="js/frontend.min.js" id="elementor-pro-frontend-js"></script>
+<script src="js/frontend.min_1.js" id="elementor-pro-frontend-js"></script>
 <script src="js/waypoints.min.js" id="elementor-waypoints-js"></script>
 <script src="js/core.min.js" id="jquery-ui-core-js"></script>
 <script id="elementor-frontend-js-before">
 var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false,"isScriptDebug":false},"i18n":{"shareOnFacebook":"Share on Facebook","shareOnTwitter":"Share on Twitter","pinIt":"Pin it","download":"Download","downloadImage":"Download image","fullscreen":"Fullscreen","zoom":"Zoom","share":"Share","playVideo":"Play Video","previous":"Previous","next":"Next","close":"Close","a11yCarouselWrapperAriaLabel":"Carousel | Horizontal scrolling: Arrow Left & Right","a11yCarouselPrevSlideMessage":"Previous slide","a11yCarouselNextSlideMessage":"Next slide","a11yCarouselFirstSlideMessage":"This is the first slide","a11yCarouselLastSlideMessage":"This is the last slide","a11yCarouselPaginationBulletMessage":"Go to slide"},"is_rtl":false,"breakpoints":{"xs":0,"sm":480,"md":768,"lg":1025,"xl":1440,"xxl":1600},"responsive":{"breakpoints":{"mobile":{"label":"Mobile Portrait","value":767,"default_value":767,"direction":"max","is_enabled":true},"mobile_extra":{"label":"Mobile Landscape","value":880,"default_value":880,"direction":"max","is_enabled":false},"tablet":{"label":"Tablet Portrait","value":1024,"default_value":1024,"direction":"max","is_enabled":true},"tablet_extra":{"label":"Tablet Landscape","value":1200,"default_value":1200,"direction":"max","is_enabled":false},"laptop":{"label":"Laptop","value":1366,"default_value":1366,"direction":"max","is_enabled":false},"widescreen":{"label":"Widescreen","value":2400,"default_value":2400,"direction":"min","is_enabled":false}}},"version":"3.19.3","is_static":false,"experimentalFeatures":{"e_optimized_assets_loading":true,"e_optimized_css_loading":true,"e_font_icon_svg":true,"additional_custom_breakpoints":true,"container":true,"e_swiper_latest":true,"theme_builder_v2":true,"hello-theme-header-footer":true,"block_editor_assets_optimize":true,"ai-layout":true,"landing-pages":true,"e_image_loading_optimization":true,"e_global_styleguide":true,"page-transitions":true,"notes":true,"form-submissions":true,"e_scroll_snap":true},"urls":{"assets":"https:\/\/leanleapwheightloss.online\/wp-content\/plugins\/elementor\/assets\/"},"swiperClass":"swiper","settings":{"page":[],"editorPreferences":[]},"kit":{"active_breakpoints":["viewport_mobile","viewport_tablet"],"global_image_lightbox":"yes","lightbox_enable_counter":"yes","lightbox_enable_fullscreen":"yes","lightbox_enable_zoom":"yes","lightbox_enable_share":"yes","lightbox_title_src":"title","lightbox_description_src":"description","hello_header_logo_type":"title","hello_footer_logo_type":"logo"},"post":{"id":597,"title":"Viva%20sorte%20%E2%80%93%20Seu%20viva%20sorte%21","excerpt":"","featuredImage":false}};
 </script>
-<script src="js/frontend.min_1.js" id="elementor-frontend-js"></script>
+<script src="js/frontend.min.js" id="elementor-frontend-js"></script>
 <script src="js/elements-handlers.min.js" id="pro-elements-handlers-js"></script>
 	
 
-</body></html>
+<script>console.log('viva-sorte');</script></body></html>
